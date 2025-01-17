@@ -9,7 +9,7 @@ h1 {
 body {
     margin: 0;
     height: 100vh;
-    background: #121212; /* Dark background */
+    background: linear-gradient(to bottom, #121212, #2e2e2e);
     overflow: hidden;
     position: relative;
   }
