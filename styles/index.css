@@ -17,7 +17,7 @@ p {
 #timora-logo {
     height: 12rem;
     width: 12rem;
-    box-shadow: 0px 4px 8px rgba(256, 256, 256, 0.1);
+    box-shadow: 0px 0px 12px rgba(256, 256, 256, 0.1);
     border-radius: 2.2rem;
 }
 
