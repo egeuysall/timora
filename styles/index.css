@@ -12,7 +12,7 @@ body, html {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 1s forwards;
     background-color: #fff;
     transition: background-color 1s ease-in-out;
 }

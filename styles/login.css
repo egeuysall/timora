@@ -14,7 +14,7 @@ body, html {
     background-color: #fff;
     transition: background-color 1s ease-in-out;
     opacity: 0;
-    animation: fadeIn 2s forwards; /* Keeps the animation */
+    animation: fadeIn 1s forwards; /* Keeps the animation */
 }
 
 @keyframes fadeIn {
@@ -79,6 +79,7 @@ body, html {
     background-color: #ebebeb;
     font-size: 1rem;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .sign-in {
@@ -92,6 +93,7 @@ body, html {
     background-color: #ebebeb;
     font-size: 1rem;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .create-account,
@@ -107,5 +109,22 @@ body, html {
 
 .create-account:active,
 .sign-in:active {
+    opacity: 0.7;
+}
+
+.recent-page {
+    text-decoration: underline;
+    color: #ababab;
+    font-size: 14px;
+    margin-top: 24px;
+    transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.recent-page:hover {
+    color: #8c8c8c;
+    cursor: pointer;
+}
+
+.recent-page:active {
     opacity: 0.7;
 }

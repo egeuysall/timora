@@ -16,6 +16,15 @@ if (signInButton) {
     signInButton.addEventListener('click', signIn);
 }
 
+function goBack () {
+    window.location.href = "/index.html";
+}
+
+const goBackButton = document.querySelector('.recent-page')
+if (goBackButton) {
+    goBackButton.addEventListener('click', goBack)
+}
+
 window.addEventListener('load', function() {
     document.body.style.opacity = '1';
 });
