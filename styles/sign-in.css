@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #fff;
+    transition: background-color 1s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Keeps the animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.title {
+    background: linear-gradient(90deg, #ebebeb, #ababab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+#timora-logo {
+    height: 8rem;
+    width: 8rem;
+    margin-bottom: 8px;
+}
+
+.mail {
+    margin-top: 16px;
+}
+
+.mail,
+.password {
+margin-top: 12px;
+border: none;
+background-color: #d6d8dc;
+padding: 12px;
+padding-left: 40px;
+padding-right: 40px;
+font-size: 1rem;
+color: #2e2e2e;
+text-align: center;
+display: block;
+border-radius: 6px;
+transition: box-shadow 0.3s ease-in-out, opacity 0.3s;
+}
+
+.mail:hover,
+.password:hover {
+    opacity: 0.8;
+}
+
+.mail:focus,
+.password:focus {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
+}
+
+.condition {
+    color: #ababab;
+    margin-top: 12px;
+}
+
+.continue {
+    margin-top: 16px;
+    border: none;
+    background-color: #2e2e2e;
+    padding: 13px;
+    padding-left: 79px;
+    padding-right: 79px;
+    color: #d6d8dc;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    backdrop-filter: blur(8px);
+}
+
+.continue:hover {
+    scale: 0.95;
+    opacity: 0.8;
+}
+
+.continue:disabled {
+    opacity: 0.8;
+}
+
+.or {
+    color: #ababab;
+    margin: 12px;
+}
+
+.google,
+.apple {
+    background-color: #2e2e2e;
+    border: none;
+    padding: 16px;
+    margin-left: 4px;
+    margin-right:4px;
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.google:hover,
+.apple:hover {
+    scale: 1.065;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
+}
+
+.google:active,
+.apple:active {
+    opacity: 0.7;
+}
+
+.google-logo,
+.apple-logo {
+    height: 24px;
+    width: 24px;
+}
+
+.go-back {
+    margin-top: 24px;
+    color: #ababab;
+    text-decoration: underline;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.go-back:hover {
+    color: #8c8c8c;
+}
+
+.go-back:active {
+    opacity: 0.7;
+}
