@@ -1,14 +1,18 @@
 {
-    "short_name": "App",
     "name": "Timora",
     "icons": [
       {
-        "src": "/path/to/icon.png",
+        "src": "/Timora/assets/icons/timora-logo.png",
         "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/Timora/assets/icons/timora-logo.png",
+        "sizes": "512x512",
         "type": "image/png"
       }
     ],
-    "start_url": "/index.html",
+    "start_url": "/Timora/index.html",
     "background_color": "#121212",
     "display": "standalone",
     "orientation": "portrait",
