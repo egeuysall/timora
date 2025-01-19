@@ -32,6 +32,8 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 #title {
@@ -47,10 +49,10 @@ body, html {
 }
 
 #quote {
-    font-size: 4rem;
-    background: linear-gradient(90deg, #ebebeb, #ababab);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    width: 56px;
+    height: 56px;
+    display: block;
+    margin: auto;
     transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -59,7 +61,7 @@ body, html {
     opacity: 0.7;
 }
 
-#quote:active{
+#quote:active {
     opacity: 0.4;
 }
 
@@ -79,6 +81,7 @@ body, html {
     font-weight: medium;
     margin-top: 32px;
     font-size: 1.3rem;
+    margin-bottom: 4px;
 }
 
 .get-started {
