@@ -51,7 +51,12 @@ body, html {
 }
 
 .mail {
-margin-top: 16px;
+    margin-top: 16px;
+}
+
+.mail,
+.password {
+margin-top: 12px;
 border: none;
 background-color: #d6d8dc;
 padding: 12px;
@@ -65,16 +70,18 @@ border-radius: 6px;
 transition: box-shadow 0.3s ease-in-out, opacity 0.3s;
 }
 
-.mail:hover {
+.mail:hover,
+.password:hover {
     opacity: 0.8;
 }
 
-.mail:focus {
+.mail:focus,
+.password:focus {
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
 }
 
 .continue {
-    margin-top: 12px;
+    margin-top: 16px;
     border: none;
     background-color: #2e2e2e;
     padding: 13px;
@@ -113,7 +120,7 @@ transition: box-shadow 0.3s ease-in-out, opacity 0.3s;
 
 .google:hover,
 .apple:hover {
-    scale: 0.95;
+    scale: 1.065;
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
 }
 
