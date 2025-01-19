@@ -118,11 +118,11 @@ body, html {
     font-size: 14px;
     margin-top: 24px;
     transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .recent-page:hover {
     color: #8c8c8c;
-    cursor: pointer;
 }
 
 .recent-page:active {
