@@ -62,5 +62,5 @@ document.querySelector('.apple-logo').addEventListener('click', () => {
 });
 
 document.querySelector('.go-back').addEventListener('click', () => {
-    window.location.href = '/login/email-verification.html';
+    window.location.href = '/login/index.html';
 });
