@@ -1,0 +1,14 @@
+{
+    "name": "nodemailer-project",
+    "version": "1.0.0",
+    "description": "A simple Node.js project using Nodemailer to send emails.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+        "nodemailer": "^6.9.16"
+    }
+}
