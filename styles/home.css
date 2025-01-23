@@ -36,3 +36,37 @@ body, html {
     max-width: 500px;
     padding: 20px;
 }
+
+.timora-logo {
+    width: 96px;
+    height: 96px;
+    opacity: 70%;
+    margin-bottom: 300px;
+}
+
+.main-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #ebebeb;
+}
+
+.deep-work {
+    color: #ababab;
+    margin-top: 96px;
+    font-size: 22px;
+    font-weight: light;
+}
+
+.timer {
+    color: #ebebeb;
+    font-size: 64px;
+}
+
+.start-work {
+
+}
+
+.work-icon {
+    
+}
