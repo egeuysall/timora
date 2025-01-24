@@ -1,31 +1,28 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
-    transition: background-color 1s ease-in-out;
-    opacity: 0;
-    animation: fadeIn 1s forwards; /* Keeps the animation */
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1s forwards;
 }
 
+/* Fade-in Animation */
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+/* Container for Content */
 .container {
     display: flex;
     flex-direction: column;
@@ -35,15 +32,19 @@ body, html {
     width: 100%;
     max-width: 500px;
     padding: 20px;
+    padding-bottom: 80px; /* Reserve space for the footer */
 }
 
+/* Logo Styling */
 .timora-logo {
     width: 96px;
     height: 96px;
-    opacity: 70%;
+    opacity: 0.7;
     margin-bottom: 300px;
+    margin-top: 48px;
 }
 
+/* Timer Section */
 .main-circle {
     width: 300px;
     height: 300px;
@@ -55,7 +56,7 @@ body, html {
     color: #ababab;
     margin-top: 96px;
     font-size: 22px;
-    font-weight: light;
+    font-weight: 300;
 }
 
 .timer {
@@ -63,10 +64,63 @@ body, html {
     font-size: 64px;
 }
 
+/* Button Styling */
 .start-work {
-
+    margin-top: 12px;
+    border-radius: 24px;
+    border: none;
+    background-color: #ebebeb;
+    color: #121212;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 32px;
 }
 
 .work-icon {
-    
+    height: 18px;
+    width: 18px;
+    margin-right: 8px;
 }
+
+/* Footer Styling */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(red, green, blue, 0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    padding: 0 10px;
+    margin-top: 64px;
+    margin-bottom: 8px;
+}
+
+.footer-item {
+    flex: 1;
+    text-align: center;
+    color: #ebebeb;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* NEXT GOAL: MAKE EACH ICON EXCEPT HOME #ABABAB INCLUDING THE TEXT. THE COLOR WILL BE #EBEBEB FOR EACH PAGE. LASTLY, CORRECT THE PROXIMITY BETWEEN THE START WORK BUTTON AND FOOTER. */
+
+/* JAVASCRIPT: START THE LOGIC OF POMODORO. */
+
+/* LOCALSTORAGE:. TAKE A LOOK AT TRY.HTML TO UNDERSTAND BASIC LOCALSTORAGE BACKEND USAGE. */

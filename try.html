@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+</head>
+<body>
+    <!-- Sign Up Form -->
+    <div id="signup">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="signupUsername">Username:</label><br>
+            <input type="text" id="signupUsername" required><br><br>
+            <label for="signupPassword">Password:</label><br>
+            <input type="password" id="signupPassword" required><br><br>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login" style="display: none;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginUsername">Username:</label><br>
+            <input type="text" id="loginUsername" required><br><br>
+            <label for="loginPassword">Password:</label><br>
+            <input type="password" id="loginPassword" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+    </div>
+
+    <script>
+        // Show login form
+        function showLogin() {
+            document.getElementById('signup').style.display = 'none';
+            document.getElementById('login').style.display = 'block';
+        }
+
+        // Show signup form
+        function showSignup() {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('signup').style.display = 'block';
+        }
+
+        // Handle sign-up
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('signupUsername').value;
+            const password = document.getElementById('signupPassword').value;
+
+            if (localStorage.getItem(username)) {
+                alert('User already exists!');
+            } else {
+                localStorage.setItem(username, password);
+                alert('Sign up successful! Please login.');
+                showLogin();
+            }
+        });
+
+        // Handle login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const storedPassword = localStorage.getItem(username);
+            if (storedPassword === password) {
+                alert('Login successful!');
+            } else {
+                alert('Invalid username or password!');
+            }
+        });
+    </script>
+</body>
+</html>
