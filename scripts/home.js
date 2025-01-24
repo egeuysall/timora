@@ -1,31 +1,19 @@
-function createAccount() {
-    window.location.href = "/login/create-account.html";
-}
+// Footer Button and Icon Hover Effects
+const footerButtons = [
+    { button: document.querySelector('#quotes'), icon: document.querySelector('#quotes-icon'), hoverSrc: '/assets/icons/quotes-icon.svg', defaultSrc: '/assets/icons/quotes-icon-not.svg' },
+    { button: document.querySelector('#tasks'), icon: document.querySelector('#tasks-icon'), hoverSrc: '/assets/icons/tasks-icon.svg', defaultSrc: '/assets/icons/tasks-icon-not.svg' },
+    { button: document.querySelector('#settings'), icon: document.querySelector('#settings-icon'), hoverSrc: '/assets/icons/settings-icon.svg', defaultSrc: '/assets/icons/settings-icon-not.svg' }
+];
 
-const createAccountButton = document.querySelector('.create-account');
-if (createAccountButton) {
-    createAccountButton.addEventListener('click', createAccount);
-}
+// Add hover effects for each button
+footerButtons.forEach(({ button, icon, hoverSrc, defaultSrc }) => {
+    button.addEventListener('mouseover', () => {
+        button.style.color = '#ebebeb'; // Change text color
+        icon.src = hoverSrc; // Change icon source
+    });
 
-function signIn() {
-    window.location.href = "/login/sign-in.html";
-}
-
-const signInButton = document.querySelector('.sign-in');
-if (signInButton) {
-    signInButton.addEventListener('click', signIn);
-}
-
-function goBack () {
-    window.location.href = "/index.html";
-}
-
-const goBackButton = document.querySelector('.recent-page')
-if (goBackButton) {
-    goBackButton.addEventListener('click', goBack)
-}
-
-const homeButton = document.querySelector('#home')
-const quoteButton = document.querySelector('#quotes')
-const taskButton = document.querySelector('#tasks')
-const settingButton = document.querySelector('#settings')
+    button.addEventListener('mouseout', () => {
+        button.style.color = '#ababab'; // Revert text color
+        icon.src = defaultSrc; // Revert icon source
+    });
+});
