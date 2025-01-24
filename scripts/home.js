@@ -25,4 +25,7 @@ if (goBackButton) {
     goBackButton.addEventListener('click', goBack)
 }
 
-window.addEventListener('load', function() {
+const homeButton = document.querySelector('#home')
+const quoteButton = document.querySelector('#quotes')
+const taskButton = document.querySelector('#tasks')
+const settingButton = document.querySelector('#settings')
