@@ -5,6 +5,14 @@ const workText = workButton.querySelector('span');
 
 audio.loop = true;
 
+const progressCircle = document.querySelector('#progress-circle');
+const initialRadius = 140; // Starting radius of the circle
+const totalSeconds = 25 * 60; // Total time for a Pomodoro in seconds
+let mins = 25;
+let secs = 0;
+let timer;
+let elapsedSeconds = 0; // Track how many seconds have passed
+
 workButton.addEventListener('click', () => {
   if (audio.paused) {
     audio.play()
@@ -20,9 +28,56 @@ workButton.addEventListener('click', () => {
   }
 });
 
-// Pomodoro Logic
+// Function to update the progress circle (shrink it)
+function updateProgress() {
+  const shrinkFactor = elapsedSeconds / totalSeconds; // Ratio of time passed
+  const newRadius = initialRadius * (1 - shrinkFactor); // Shrink the circle's radius
 
-// Clone for Inspiration: https://github.com/packetcode/pomodoro
+  progressCircle.setAttribute("r", newRadius); // Update the radius of the circle
+}
 
-const mins = document.querySelector("#min")
-const secs = document.querySelector("#sec")
+function updateDisplay() {
+  const formattedMins = mins < 10 ? "0" + mins : mins;
+  const formattedSecs = secs < 10 ? "0" + secs : secs;
+  document.querySelector("#min").innerHTML = formattedMins;
+  document.querySelector("#sec").innerHTML = formattedSecs;
+
+  updateProgress(); // Update the progress circle each time the display updates
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  timer = null;
+  mins = 25;
+  secs = 0;
+  elapsedSeconds = 0; // Reset elapsed time
+  progressCircle.setAttribute("r", initialRadius); // Reset the radius of the progress circle
+  updateDisplay(); // Update display to show initial time
+}
+
+function startTimer() {
+  timer = setInterval(() => {
+    if (secs === 0) {
+      if (mins === 0) {
+        clearInterval(timer);
+        timer = null;
+        return;
+      }
+      mins--;
+      secs = 59;
+    } else {
+      secs--;
+    }
+    elapsedSeconds++; // Increment elapsed seconds
+    updateDisplay();
+  }, 1000);
+}
+
+workButton.addEventListener("click", () => {
+  if (timer) {
+    resetTimer(); // Stop and reset the timer
+  } else {
+    resetTimer(); // Reset to ensure it starts cleanly
+    startTimer(); // Start the timer
+  }
+});
