@@ -10,30 +10,15 @@ const initialRadius = 140; // Starting radius of the circle
 const totalSeconds = 25 * 60; // Total time for a Pomodoro in seconds
 let mins = 25;
 let secs = 0;
-let timer;
+let timer = null;
 let elapsedSeconds = 0; // Track how many seconds have passed
-
-workButton.addEventListener('click', () => {
-  if (audio.paused) {
-    audio.play()
-      .then(() => {
-        workIcon.src = '/assets/icons/pause-icon.svg';
-        workText.textContent = 'Pause Work';
-      })
-      .catch(() => {});
-  } else {
-    audio.pause();
-    workIcon.src = '/assets/icons/play-icon.svg';
-    workText.textContent = 'Start Work';
-  }
-});
 
 // Function to update the progress circle (shrink it)
 function updateProgress() {
   const shrinkFactor = elapsedSeconds / totalSeconds; // Ratio of time passed
   const newRadius = initialRadius * (1 - shrinkFactor); // Shrink the circle's radius
 
-  progressCircle.setAttribute("r", newRadius); // Update the radius of the circle
+  progressCircle.setAttribute("r", Math.max(0, newRadius)); // Ensure radius doesn't go negative
 }
 
 function updateDisplay() {
@@ -61,7 +46,10 @@ function startTimer() {
       if (mins === 0) {
         clearInterval(timer);
         timer = null;
-        return;
+        audio.pause();
+        workIcon.src = '/assets/icons/play-icon.svg';
+        workText.textContent = 'Start Work';
+        return; // Exit if timer ends
       }
       mins--;
       secs = 59;
@@ -73,11 +61,23 @@ function startTimer() {
   }, 1000);
 }
 
+// Combined button click listener
 workButton.addEventListener("click", () => {
   if (timer) {
-    resetTimer(); // Stop and reset the timer
+    // Pause timer
+    resetTimer();
+    audio.pause();
+    workIcon.src = '/assets/icons/play-icon.svg';
+    workText.textContent = 'Start Work';
   } else {
-    resetTimer(); // Reset to ensure it starts cleanly
-    startTimer(); // Start the timer
+    // Start timer
+    resetTimer(); // Ensure clean start
+    startTimer();
+    audio.play()
+      .then(() => {
+        workIcon.src = '/assets/icons/pause-icon.svg';
+        workText.textContent = 'Pause Work';
+      })
+      .catch(() => {});
   }
 });
