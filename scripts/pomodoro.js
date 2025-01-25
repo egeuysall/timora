@@ -23,3 +23,6 @@ workButton.addEventListener('click', () => {
 // Pomodoro Logic
 
 // Clone for Inspiration: https://github.com/packetcode/pomodoro
+
+const mins = document.querySelector("#min")
+const secs = document.querySelector("#sec")
