@@ -19,3 +19,7 @@ workButton.addEventListener('click', () => {
     workText.textContent = 'Start Work';
   }
 });
+
+// Pomodoro Logic
+
+// Clone for Inspiration: https://github.com/packetcode/pomodoro
