@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="styles/task.css">
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+    <canvas id="grainCanvas"></canvas>
+
+    <div class="container">
+        <header>
+            <img class="timora-logo" src="/assets/icons/ios-logo.svg" alt="Timora Logo">
+        </header>
+        <div class="todo-app">
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add task...">
+                <button onclick="addTask()">Add</button>
+            </div>
+
+            <ul id="list-container"></ul>
+        </div>
+        <div class="footer">
+            <a href="home.html" class="footer-item" id="home">
+                <img src="/assets/icons/home-icon-not.svg" alt="Home" class="footer-icon" id="home-icon">
+                <span class="home-text">Home</span>
+            </a>
+            <a href="#" class="footer-item" id="quotes">
+                <img src="/assets/icons/quotes-icon-not.svg" alt="Quotes" class="footer-icon" id="quotes-icon">
+                <span>Quotes</span>
+            </a>
+            <a href="#" class="footer-item" id="tasks">
+                <img src="/assets/icons/tasks-icon.svg" alt="Tasks" class="footer-icon" id="tasks-icon">
+                <span>Tasks</span>
+            </a>
+            <a href="#" class="footer-item" id="settings">
+                <img src="/assets/icons/settings-icon-not.svg" alt="Settings" class="footer-icon" id="settings-icon">
+                <span>Settings</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="scripts/task.js"></script>
+    <script src="scripts/global.js"></script>
+</body>
+</html>
