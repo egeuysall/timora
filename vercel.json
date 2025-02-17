@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/timora/(.*)",
-      "destination": "https://timora.egeuysal.com/$1"
-    }
-  ]
-}
