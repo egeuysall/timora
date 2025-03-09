@@ -12,43 +12,45 @@
 
 <body>
     <canvas id="grainCanvas"></canvas>
-    <div class="container">
-        <header>
-            <img class="timora-logo" src="/assets/icons/ios-logo.svg" alt="Timora Logo">
-        </header>
-        <svg id="progress" width="300" height="300">
-            <circle id="progress-circle" cx="150" cy="150" r="140" fill="#ebebeb" />
-        </svg>
-        <div class="main-text">
-            <p class="deep-work">Deep Work</p>
-            <h1 class="timer">
-                <span id="min">25</span>:<span id="sec">00</span>
-            </h1>
+    <div class="main">
+        <div class="container">
+            <header>
+                <img class="timora-logo" src="/assets/icons/ios-logo.svg" alt="Timora Logo">
+            </header>
+            <svg id="progress" width="300" height="300">
+                <circle id="progress-circle" cx="150" cy="150" r="140" fill="#ebebeb" />
+            </svg>
+            <div class="main-text">
+                <p class="deep-work">Deep Work</p>
+                <h1 class="timer">
+                    <span id="min">25</span>:<span id="sec">00</span>
+                </h1>
+            </div>
+            <div class="buttons">
+                <button class="start-work" id="start-work">
+                    <img class="work-icon" src="/assets/icons/play-icon.svg" alt="Start Work Icon">
+                    <span>Start Work</span>
+                </button>
+            </div>
         </div>
-        <div class="buttons">
-            <button class="start-work" id="start-work">
-                <img class="work-icon" src="/assets/icons/play-icon.svg" alt="Start Work Icon">
-                <span>Start Work</span>
-            </button>
+        <div class="footer">
+            <a href="#" class="footer-item" id="home">
+                <img src="/assets/icons/home-icon.svg" alt="Home" class="footer-icon" id="home-icon">
+                <span class="home-text">Home</span>
+            </a>
+            <a href="#" class="footer-item" id="quotes">
+                <img src="/assets/icons/quotes-icon-not.svg" alt="Quotes" class="footer-icon" id="quotes-icon">
+                <span>Quotes</span>
+            </a>
+            <a href="task.html" class="footer-item" id="tasks">
+                <img src="/assets/icons/tasks-icon-not.svg" alt="Tasks" class="footer-icon" id="tasks-icon">
+                <span>Tasks</span>
+            </a>
+            <a href="#" class="footer-item" id="settings">
+                <img src="/assets/icons/settings-icon-not.svg" alt="Settings" class="footer-icon" id="settings-icon">
+                <span>Settings</span>
+            </a>
         </div>
-    </div>
-    <div class="footer">
-        <a href="#" class="footer-item" id="home">
-            <img src="/assets/icons/home-icon.svg" alt="Home" class="footer-icon" id="home-icon">
-            <span class="home-text">Home</span>
-        </a>
-        <a href="#" class="footer-item" id="quotes">
-            <img src="/assets/icons/quotes-icon-not.svg" alt="Quotes" class="footer-icon" id="quotes-icon">
-            <span>Quotes</span>
-        </a>
-        <a href="task.html" class="footer-item" id="tasks">
-            <img src="/assets/icons/tasks-icon-not.svg" alt="Tasks" class="footer-icon" id="tasks-icon">
-            <span>Tasks</span>
-        </a>
-        <a href="#" class="footer-item" id="settings">
-            <img src="/assets/icons/settings-icon-not.svg" alt="Settings" class="footer-icon" id="settings-icon">
-            <span>Settings</span>
-        </a>
     </div>
     <script src="scripts/home.js"></script>
     <script src="scripts/global.js"></script>
@@ -58,4 +60,3 @@
 </html>
 
 <!-- Add the quotes logic! -->
- 
