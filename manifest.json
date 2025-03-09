@@ -1,0 +1,22 @@
+{
+  "name": "Timora",
+  "short_name": "Timora",
+  "description": "A fast and efficient Pomodoro timer for peak productivity.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff4f4f",
+  "icons": [
+    {
+      "src": "/assets/timora-logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "permissions": {
+    "notifications": {
+      "description": "Allows Timora to send reminders for work and break sessions."
+    }
+  }
+}
