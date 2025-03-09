@@ -5,8 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="styles/global.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('/path/to/your/background.jpg') no-repeat center center fixed; /* Adjust the path to your background image */
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%; /* Adjust the width to 80% */
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 80%;
+            }
+        }
+    </style>
     <link rel="manifest" href="/manifest.json">
 </head>
 
