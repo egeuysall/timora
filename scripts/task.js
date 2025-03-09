@@ -16,6 +16,7 @@ function addTask() {
 
     inputBox.value = "";
     saveData();
+    checkTasksCount();
 }
 
 inputBox.addEventListener("keydown", function (e) {
@@ -31,6 +32,7 @@ listContainer.addEventListener('click', function (e) {
     } else if (e.target.tagName === 'SPAN') {
         e.target.parentElement.remove();
         saveData();
+        checkTasksCount();
     }
 }, false);
 
@@ -40,6 +42,45 @@ function saveData() {
 
 function showTask() {
     listContainer.innerHTML = localStorage.getItem('data');
+    checkTasksCount();
+}
+
+function checkTasksCount() {
+    const tasks = listContainer.getElementsByTagName('li');
+    let taskCount = 0;
+    let showMore = document.getElementById('show-more');
+
+    Array.from(tasks).forEach(task => {
+        if (task.id !== 'show-more') {
+            taskCount++;
+        }
+    });
+
+    if (taskCount > 5) {
+        for (let i = 0; i < tasks.length; i++) {
+            if (tasks[i].id !== 'show-more') {
+                tasks[i].style.display = i < 5 ? 'block' : 'none';
+            }
+        }
+        if (!showMore) {
+            showMore = document.createElement('li');
+            showMore.id = 'show-more';
+            showMore.innerHTML = '5+ tasks';
+            listContainer.appendChild(showMore);
+        }
+    } else {
+        for (let i = 0; i < tasks.length; i++) {
+            tasks[i].style.display = 'block';
+        }
+        if (showMore) {
+            showMore.remove();
+        }
+    }
+
+    // Ensure the show-more element stays at the end of the list
+    if (showMore && showMore.parentElement === listContainer) {
+        listContainer.appendChild(showMore);
+    }
 }
 
 showTask();
@@ -47,7 +88,7 @@ showTask();
 // Footer Button and Icon Hover Effects
 const footerButtons = [
     { button: document.querySelector('#quotes'), icon: document.querySelector('#quotes-icon'), hoverSrc: '/assets/icons/quotes-icon.svg', defaultSrc: '/assets/icons/quotes-icon-not.svg' },
-    { button: document.querySelector('#home'), icon: document.querySelector('#home-icon'), hoverSrc: '/assets/icons/home-icon.svg', defaultSrc: '/assets/icons/home-icon-not.svg' }, // Replaced tasks with home
+    { button: document.querySelector('#home'), icon: document.querySelector('#home-icon'), hoverSrc: '/assets/icons/home-icon.svg', defaultSrc: '/assets/icons/home-icon-not.svg' },
     { button: document.querySelector('#settings'), icon: document.querySelector('#settings-icon'), hoverSrc: '/assets/icons/settings-icon.svg', defaultSrc: '/assets/icons/settings-icon-not.svg' }
 ];
 

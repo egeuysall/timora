@@ -5,10 +5,12 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
@@ -18,8 +20,12 @@ body, html {
 
 /* Fade-in Animation */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Container for Content */
@@ -32,7 +38,7 @@ body, html {
     width: 100%;
     max-width: 500px;
     padding: 20px;
-    padding-bottom: 80px; /* Reserve space for the footer */
+    flex-grow: 1; /* Pushes footer down */
 }
 
 /* Logo Styling */
@@ -40,8 +46,8 @@ body, html {
     width: 96px;
     height: 96px;
     opacity: 0.7;
-    margin-bottom: 300px;
-    margin-top: 48px;
+    margin-bottom: 100px; /* Reduced space */
+    margin-top: 24px; /* Adjusted for better positioning */
 }
 
 /* Timer Section */
@@ -54,7 +60,7 @@ body, html {
 
 .deep-work {
     color: #ababab;
-    margin-top: 96px;
+    margin-top: 48px;
     font-size: 22px;
     font-weight: light;
 }
@@ -66,9 +72,9 @@ body, html {
 
 /* Button Styling */
 .start-work {
-    display: flex; /* Make the button a flex container */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 12px;
     border-radius: 24px;
     border: none;
@@ -79,11 +85,11 @@ body, html {
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 32px;
-    transition: scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .start-work:hover {
-    scale: 1.05;
+    transform: scale(1.05);
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
     opacity: 0.95;
 }
@@ -91,7 +97,7 @@ body, html {
 .work-icon {
     height: 18px;
     width: 18px;
-    margin-right: 12px; /* Optional: adds space between the icon and text */
+    margin-right: 12px;
     display: inline-block;
 }
 
@@ -99,19 +105,19 @@ body, html {
 .footer {
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
+    max-width: 400px; /* Prevents stretching */
     height: 60px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    z-index: 1000;
     padding: 0 10px;
     background-color: rgba(0, 0, 0, 0);
 }
 
 .footer-item {
-    flex: 1;
     text-align: center;
     font-size: 13px;
     font-weight: bold;
@@ -120,12 +126,14 @@ body, html {
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    color: #ababab; /* Default text color */
+    justify-content: space-between;
+    color: #ababab;
     transition: color 0.3s ease-in-out;
+    padding: 16px;
 }
 
 .footer-item:hover {
-    color: #ebebeb; /* Text color on hover */
+    color: #ebebeb;
 }
 
 .home-text {
@@ -135,9 +143,78 @@ body, html {
 .footer-icon {
     width: 24px;
     height: 24px;
-    transition: opacity 0.5s ease-in-out; /* Smooth icon transition */
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* LOCALSTORAGE: TAKE A LOOK AT TRY.HTML TO UNDERSTAND BASIC LOCALSTORAGE BACKEND USAGE. */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
 
-/* LONG-TERM GOALS: START LEARNING BACKEND! ALSO, TRY TO APPLY FRAMEWORKS SUCH AS TAILWIND OR REACT. LASTLY, UTILIZE FROM TYPESCRIPT! */
+    .main-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .deep-work {
+        margin-top: 24px;
+        font-size: 20px;
+    }
+
+    .timer {
+        font-size: 48px;
+    }
+
+    .start-work {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .footer {
+        max-width: 100%;
+        padding: 0 5px;
+    }
+
+    .footer-item {
+        font-size: 12px;
+    }
+
+    .footer-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .deep-work {
+        font-size: 18px;
+    }
+
+    .timer {
+        font-size: 36px;
+    }
+
+    .start-work {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 0 10px; /* Adjusted for better spacing */
+    }
+
+    .footer-item {
+        font-size: 13px; /* Increased font size for better readability */
+    }
+
+    .footer-icon {
+        width: 24px; /* Increased icon size */
+        height: 24px; /* Increased icon size */
+    }
+}
