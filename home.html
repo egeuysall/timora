@@ -1,3 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+    <canvas id="grainCanvas"></canvas>
+    <div class="container">
+        <header>
+            <img class="timora-logo" src="/assets/icons/ios-logo.svg" alt="Timora Logo">
+        </header>
+        <svg id="progress" width="300" height="300">
+            <circle id="progress-circle" cx="150" cy="150" r="140" fill="#ebebeb" />
+        </svg>
+        <div class="main-text">
+            <p class="deep-work">Deep Work</p>
+            <h1 class="timer">
+                <span id="min">25</span>:<span id="sec">00</span>
+            </h1>
+        </div>
+        <div class="buttons">
+            <button class="start-work" id="start-work">
+                <img class="work-icon" src="/assets/icons/play-icon.svg" alt="Start Work Icon">
+                <span>Start Work</span>
+            </button>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#" class="footer-item" id="home">
             <img src="/assets/icons/home-icon.svg" alt="Home" class="footer-icon" id="home-icon">
             <span class="home-text">Home</span>
         </a>
