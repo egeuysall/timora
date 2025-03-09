@@ -5,10 +5,10 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#ff4f4f",
+  "theme_color": "#121212",
   "icons": [
     {
-      "src": "/assets/timora-logo.png",
+      "src": "/assets/icons/timora-logo.png",
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any maskable"
