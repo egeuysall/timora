@@ -8,7 +8,7 @@
   "theme_color": "#121212",
   "icons": [
     {
-      "src": "/assets/icons/timora-logo.png",
+      "src": "/assets/icons/ios-logo.png",
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any maskable"
